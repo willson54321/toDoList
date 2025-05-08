@@ -102,6 +102,7 @@ req.on('data',chunk=>{
 }
 
 const server = http.createServer(requestListener);
-server.listen(3005, () => {
-    console.log("Server running on http://127.0.0.1:3005");
-  });
+const PORT = process.env.PORT || 3005;
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
